@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:composite="http://xmlns.jcp.org/jsf/composite">
+<composite:interface>
+	<composite:attribute name="url"
+		default="https://petstore.swagger.io/v2/swagger.json" />
+	<composite:attribute name="layout"
+		default="BaseLayout" />
+</composite:interface>
+<composite:implementation>
+	<h:outputStylesheet library="swagger-ui" name="swagger-ui.css" />
+	<h:outputScript library="swagger-ui" name="swagger-ui-bundle.js" target="head" />
+	<h:outputScript library="swagger-ui" name="swagger-ui-standalone-preset.js" target="head" />
+	<h:outputScript library="swagger-ui" name="ui-component.js" target="head" /><script type="text/javascript"
+	>window.addEventListener('load', (event) => SwaggerUI.load(event, '#{cc.attrs.url}', '#{cc.attrs.layout}'), true);</script><div id="swagger-ui" /></composite:implementation>
+</html>
